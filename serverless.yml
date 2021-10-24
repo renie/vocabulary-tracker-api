@@ -1,0 +1,15 @@
+org: renie
+app: vocabulary-tracker-api
+service: vocabulary-tracker-api
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: '20201221'
+
+functions:
+  api:
+    handler: index_serverless.handler
+    events:
+      - httpApi: '*'
