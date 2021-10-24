@@ -1,9 +1,12 @@
-# Base NodeJS API project 
+# Base NodeJS API + MongoDB project 
 
 ## Install deps
 ```
 npm i
 ```
+
+## Setup your `.env`
+Open your .env and setup everything
 
 ## Dev start
 ```

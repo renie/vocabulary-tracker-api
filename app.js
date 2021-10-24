@@ -4,8 +4,14 @@ import helmet from 'helmet'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 
-import config from './config'
-import { setAllRoutes } from './routes/main'
+import logger from './src/commons/logger'
+import error from './src/commons/error'
+
+global.logger = logger
+global.ThrowError = error
+
+import config from './src/commons/config'
+import { setAllRoutes } from './src/routes/main'
 
 const configureInstance = (expressInstance, corsOptions) => {
     expressInstance.use(bodyParser.json())

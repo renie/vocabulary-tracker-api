@@ -3,7 +3,10 @@ import path from 'path'
 
 const environment = process.env.NODE_ENV
 
-dotenv.config({ path: path.join(__dirname, '.env') })
+dotenv.config({ path: path.join(__dirname, '..', '..', '.env') })
+
+console.log(path.join(__dirname, '..', '.env'))
+console.log(process.env.PORT)
 
 const config = {
     PORT: process.env.PORT,

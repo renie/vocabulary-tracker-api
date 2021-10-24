@@ -1,9 +1,8 @@
 import os from 'os'
 import cluster from 'cluster'
 
-import config from './config'
-import app  from './app'
-import { exit } from 'process'
+import config from '../src/commons/config'
+import app  from '../app'
 
 const clusterWorkerSize = os.cpus().length
 
@@ -12,9 +11,9 @@ const forkCluster = n => {
     
     while (forkCounter < n) {
         cluster.fork()
-        console.log(`newFork #${forkCounter}`)
         forkCounter++
     }
+    console.log(`Theres is ${forkCounter} forks in the cluster.`)
 }
 
 const forkAllClusters = () => forkCluster(clusterWorkerSize)
